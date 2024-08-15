@@ -3,18 +3,19 @@ import Layout from '@/components/Layout'
 import Head from 'next/head'
 import Image from 'next/image'
 import React from 'react'
-import profilePic from '../../public/images/profile/developer-pic-2.jpg'
+import profilePic from '../../public/images/profile/photo-2.png'
 import { useRef } from 'react'
 import { useInView, useMotionValue, useSpring } from 'framer-motion'
 import { useEffect } from 'react'
 import Skills from '@/components/Skills'
 import Experience from '@/components/Experience'
 import Education from '@/components/Education'
+import TransitionEffect from '@/components/TransitionEffect'
 
-const AnimatedNumbers = ({ value }) => {
+const AnimatedNumbers = ({ value, decimalPlaces }) => {
     const ref = useRef(null);
     const motionValue = useMotionValue(0);
-    const springValue = useSpring(motionValue, { duration: 3000 });
+    const springValue = useSpring(motionValue, { duration: 5000 });
     const isInView = useInView(ref, { once: true });
 
     useEffect(() => {
@@ -25,11 +26,11 @@ const AnimatedNumbers = ({ value }) => {
 
     useEffect(() => {
         springValue.on("change", (latest) => {
-            if (ref.current && latest.toFixed(0) <= value) {
-                ref.current.textContent = latest.toFixed(0);
+            if (ref.current) {
+                ref.current.textContent = latest.toFixed(decimalPlaces);
             }
-        })
-    }, [springValue, value])
+        });
+    }, [springValue, decimalPlaces]);
 
     return <span ref={ref}></span>
 }
@@ -38,45 +39,43 @@ const about = () => {
     return (
         <>
             <Head>
-                <title>CodeBucks | About Page</title>
+                <title>Ashish's | About Page</title>
                 <meta name="description" content="Ashish Vaidya Portfolio" />
             </Head>
+            <TransitionEffect />
             <main className="flex w-full flex-col items-center justify-center">
                 <Layout className='pt-16'>
-                    <AnimatedText text="Passion Fuels Purpose!" className='mb-16' />
-                    <div className='grid w-full grid-cols-8 gap-16 '>
-                        <div className='col-span-3 flex flex-col items-start justify-start'>
-                            <h2 className='mb-4 text-lg font-bold uppercase text-dark/75'>About Me</h2>
-                            <p className='font-medium'>Hi, I'm CodeBucks, a web developer and UI/UX designer with a passion for creating beautiful, functional,
-                                and user-centered digital experiences. With 4 years of experience in the field. I am always looking for
-                                new and innovative ways to bring my clients' visions to life.
+                    <AnimatedText text="Code with heart, and the solution will follow." className='mb-16 lg:!text-7xl sm:!text-6xl xs:!text-4xl sm:mb-8' />
+                    <div className='grid w-full grid-cols-8 gap-16 sm:gap-8 '>
+                        <div className='col-span-3 flex flex-col items-start justify-start xl:col-span-4 md:order-2 md:col-span-8'>
+                            <h2 className='mb-4 text-2xl font-bold uppercase text-dark/75'>About Me</h2>
+                            <p className='font-medium text-xl'>Hey there! I’m Ashish Vaidya, your go-to Frontend Developer based in Pune, India. My coding adventure began with a deep curiosity about how things work—yes, I’m the kind of person who’ll take gadgets apart just to see what’s inside (and put them back together, of course!). At Sasken Technologies (formerly Singularity Labs), I refined my skills in HTML, CSS, JavaScript, and React.js, transforming complex designs into pixel-perfect, responsive web experiences.
                             </p>
-                            <p className='my-4 font-medium'>
-                                - I believe that design is about more than just making things look pretty – it's about solving problems and
-                                creating intuitive, enjoyable experiences for users.
+                            <p className='my-4 font-medium text-xl'>
+                                I’m skilled at blending functionality with flair using Material UI and Tailwind CSS, ensuring that every project I touch is both visually stunning and highly functional. Whether it's integrating APIs seamlessly or optimizing performance, I make sure your app looks great on any device and runs like a dream. Projects like an IMDb-like movie app and a user-friendly data dashboard are just a few examples of how I turn technical challenges into engaging solutions.
                             </p>
-                            <p className='font-medium'>
-                                - Whether I'm working on a website, mobile app, or
-                                other digital product, I bring my commitment to design excellence and user-centered thinking to
-                                every project I work on. I look forward to the opportunity to bring my skills and passion to your next project.
+                            <p className='font-medium text-xl'>
+                                Outside of coding, I’ve achieved a Guinness World Record for planting saplings—because saving the planet is the ultimate side quest. I also lead social projects with the National Service Scheme, proving that a bit of heart can make a big difference. If you’re looking for a developer who combines technical prowess with a passion for creating impactful experiences, let’s build something amazing together—one responsive, pixel-perfect app at a time!
                             </p>
                         </div>
-                        <div className='col-span-3 relative h-max rounded-2xl border-2 border-solid border-dark bg-light p-8'>
-                            <div className='absolute top-0 -right-3 -z-10 w-[102%] h-[103%] rounded-2xl bg-dark' />
-                            <Image src={profilePic} alt='Ashish Vaidya' className='w-full h-auto rounded-2xl' />
+                        <div className='col-span-3 relative h-max rounded-2xl border-2 border-solid border-dark bg-light p-8 xl:col-span-4 md:order-1 md:col-span-8'>
+                            <div className='absolute top-0 -right-3 -z-10 w-[102%] h-[103%] rounded-2xl bg-dark'
+                                priority
+                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
+                            <Image src={profilePic} alt='Ashish Vaidya' className='w-full h-auto rounded-2xl transform scale-105' />
                         </div>
-                        <div className='col-span-2 flex flex-col items-end justify-between'>
-                            <div className='flex flex-col items-end justify-center'>
-                                <span className='inline-block text-7xl font-bold'><AnimatedNumbers value={50} />+</span>
-                                <h2 className='text-xl font-medium capitalize text-dark/75'>Satisfied Clients</h2>
+                        <div className='col-span-2 flex flex-col items-end justify-between xl:col-span-8 xl:flex-row xl:items-center md:order-3'>
+                            <div className='flex flex-col items-end justify-center xl:items-center'>
+                                <span className='inline-block text-7xl font-bold md:text-6xl sm:text-5xl xs:text-4xl'><AnimatedNumbers value={4} />+</span>
+                                <h2 className='text-xl font-medium capitalize text-dark/75 xl:text-center md:text-lg sm:text-base xs:text-sm'>Satisfied Clients</h2>
                             </div>
-                            <div className='flex flex-col items-end justify-center'>
-                                <span className='inline-block text-7xl font-bold'><AnimatedNumbers value={40} />+</span>
-                                <h2>Projects Completed</h2>
+                            <div className='flex flex-col items-end justify-center xl:items-center'>
+                                <span className='inline-block text-7xl font-bold md:text-6xl sm:text-5xl xs:text-4xl'><AnimatedNumbers value={15} />+</span>
+                                <h2 className='text-xl font-medium capitalize text-dark/75 xl:text-center md:text-lg sm:text-base xs:text-sm'>Projects Completed</h2>
                             </div>
-                            <div className='flex flex-col items-end justify-center'>
-                                <span className='inline-block text-7xl font-bold'><AnimatedNumbers value={4} />+</span>
-                                <h2>Years of Experience</h2>
+                            <div className='flex flex-col items-end justify-center xl:items-center'>
+                                <span className='inline-block text-7xl font-bold md:text-6xl sm:text-5xl xs:text-4xl'><AnimatedNumbers value={1.6} decimalPlaces={1}/>+</span>
+                                <h2 className='text-xl font-medium capitalize text-dark/75 xl:text-center md:text-lg sm:text-base xs:text-sm'>Years of Experience</h2>
                             </div>
                         </div>
                     </div>

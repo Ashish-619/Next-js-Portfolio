@@ -55,6 +55,16 @@ export const LinkedInIcon = ({ className, ...rest }) => (
     </svg>
 );
 
+export const InstagramIcon = ({ className, ...rest }) => (
+    <img
+        src="/instagram-svg.svg"
+        alt="Instagram Icon"
+        className={`w-full h-auto ${className}`}
+        {...rest}
+    />
+);
+
+
 export const PinterestIcon = ({ className, ...rest }) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"

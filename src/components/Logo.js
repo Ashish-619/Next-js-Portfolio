@@ -1,47 +1,63 @@
-import Link from 'next/link'
-import React from 'react'
-import { useState } from 'react';
-import { motion } from "framer-motion";
+import Link from 'next/link';
+import React from 'react';
+import { motion } from 'framer-motion';
+import { useAudio } from './AudioContext'; // Adjust the path as needed
 
 const MotionLink = motion(Link);
+
 const Logo = () => {
-    const [isHovered, setIsHovered] = useState(false);
+    const { isPlaying, toggleAudio } = useAudio();
 
     return (
-        <div className='flex items-center justify-center mt-2'>
-            <MotionLink href="/" className='w-16 h-16 bg-dark text-light flex items-center justify-center rounded-full text-2xl font-bold'
-                whileHover={{
-                    scale: [1, 1.2, 1],
-                    transition: {
-                        scale: {
-                            duration: 0.4,
+        <div className='flex flex-col items-center justify-center mt-2'>
+            <div className="relative flex items-center justify-center">
+                {/* Pulsating effect */}
+                {isPlaying && (
+                    <motion.div
+                        className='absolute w-20 h-20 bg-dark rounded-full'
+                        animate={{
+                            scale: [1, 1.4, 1],
+                            opacity: [0.7, 0.3, 0.7],
+                        }}
+                        transition={{
+                            duration: 1.2,
                             repeat: Infinity,
                             repeatType: "loop",
-                        },
-                        backgroundColor: {
-                            duration: 1.5,
-                            repeat: isHovered ? Infinity : 0,
-                            repeatType: "loop",
-                        },
-                    },
-                    backgroundColor: isHovered ? [
-                        '#FF5733', // Red-Orange
-                        '#33FF57', // Green
-                        '#3357FF', // Blue
-                        '#FF33A1', // Pink
-                        '#F5F5F5', // Light Gray
-                        '#FFBF00', // Yellow
-                        '#8E44AD', // Purple
-                        '#1F77B4', // Dark Blue
-                        '#2ECC71', // Light Green
-                        '#E67E22', // Orange
-                    ] : 'bg-black', // comes to original color(default)
-                }}
-                onHoverStart={() => setIsHovered(true)}
-                onHoverEnd={() => setIsHovered(false)}
-            >AV</MotionLink>
-        </div >
-    )
-}
+                        }}
+                    />
+                )}
 
-export default Logo
+                <MotionLink
+                    href="/"
+                    className={`w-16 h-16 bg-dark text-light flex flex-col items-center justify-center rounded-full text-2xl font-bold relative z-10 ${isPlaying ? 'pulse-animation' : ''}`}
+                    whileHover={{
+                        scale: 1.1,
+                        transition: {
+                            duration: 0.4,
+                        },
+                    }}
+                    onClick={(event) => {
+                        event.preventDefault();
+                        toggleAudio();
+                    }}
+                >
+                    <div className="text-center">
+                        AV
+                    </div>
+                    <div className="text-sm text-gray-400">
+                        {isPlaying ? '(Stop)' : '(Play)'}
+                    </div>
+                </MotionLink>
+
+                {isPlaying && (
+                    <div className="absolute inset-0 z-0 flex items-center justify-center">
+                        {/* Wave effect */}
+                        <div className="absolute w-24 h-24 bg-gradient-to-r from-gray-400 to-transparent rounded-full opacity-50 animate-wave" />
+                    </div>
+                )}
+            </div>
+        </div>
+    );
+};
+
+export default Logo;
