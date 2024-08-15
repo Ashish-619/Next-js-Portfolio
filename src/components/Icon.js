@@ -1,3 +1,4 @@
+import Image from "next/image";
 import * as React from "react";
 
 export const GithubIcon = ({ className, ...rest }) => (
@@ -56,9 +57,12 @@ export const LinkedInIcon = ({ className, ...rest }) => (
 );
 
 export const InstagramIcon = ({ className, ...rest }) => (
-    <img
+    <Image
         src="/instagram-svg.svg"
         alt="Instagram Icon"
+        width="16"
+        height="16"
+        viewBox="0 0 256 256"
         className={`w-full h-auto ${className}`}
         {...rest}
     />
