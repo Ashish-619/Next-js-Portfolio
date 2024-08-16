@@ -3,7 +3,7 @@ import Layout from '@/components/Layout'
 import Head from 'next/head'
 import Image from 'next/image'
 import React from 'react'
-import profilePic from 'public/images/profile/photo-2.png'
+import profilePic from 'images/profile/photo-2.png'
 import { useRef } from 'react'
 import { useInView, useMotionValue, useSpring } from 'framer-motion'
 import { useEffect } from 'react'
@@ -62,7 +62,7 @@ const about = () => {
                             <div className='absolute top-0 -right-3 -z-10 w-[102%] h-[103%] rounded-2xl bg-dark'
                                 priority
                                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
-                            <Image src={profilePic} alt='Ashish Vaidya' className='w-full h-auto rounded-2xl transform scale-105' />
+                            <Image src='images/profile/photo-2.png' alt='Ashish Vaidya' className='w-full h-auto rounded-2xl transform scale-105' />
                         </div>
                         <div className='col-span-2 flex flex-col items-end justify-between xl:col-span-8 xl:flex-row xl:items-center md:order-3'>
                             <div className='flex flex-col items-end justify-center xl:items-center'>
@@ -74,7 +74,7 @@ const about = () => {
                                 <h2 className='text-xl font-medium capitalize text-dark/75 xl:text-center md:text-lg sm:text-base xs:text-sm'>Projects Completed</h2>
                             </div>
                             <div className='flex flex-col items-end justify-center xl:items-center'>
-                                <span className='inline-block text-7xl font-bold md:text-6xl sm:text-5xl xs:text-4xl'><AnimatedNumbers value={1.6} decimalPlaces={1}/>+</span>
+                                <span className='inline-block text-7xl font-bold md:text-6xl sm:text-5xl xs:text-4xl'><AnimatedNumbers value={1.6} decimalPlaces={1} />+</span>
                                 <h2 className='text-xl font-medium capitalize text-dark/75 xl:text-center md:text-lg sm:text-base xs:text-sm'>Years of Experience</h2>
                             </div>
                         </div>
