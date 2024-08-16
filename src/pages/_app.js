@@ -1,4 +1,5 @@
 import '@/styles/globals.css';
+import { Analytics } from "@vercel/analytics/react"
 import { Montserrat } from 'next/font/google';
 import Head from 'next/head';
 import NavBar from '@/components/NavBar';

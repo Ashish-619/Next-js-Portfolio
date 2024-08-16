@@ -59,10 +59,10 @@ const NavBar = () => {
                 </nav>
 
                 <nav className='flex items-center justify-center flex-wrap'>
-                    <motion.a href="https://github.com/ashish-619" target={"_blank"} whileHover={{ y: -5 }} whileTap={{ scale: 1.5 }} className='w-6 mr-3'><GithubIcon /></motion.a>
-                    <motion.a href="https://www.linkedin.com/in/ashishvaidya2/" target={"_blank"} whileHover={{ y: -5 }} whileTap={{ scale: 1.5 }} className='w-6 mx-3'><LinkedInIcon /></motion.a>
-                    <motion.a href="https://x.com/AshishVaidya905" target={"_blank"} whileHover={{ y: -5 }} whileTap={{ scale: 1.5 }} className='w-6 mx-3'> <TwitterIcon /></motion.a>
-                    <motion.a href="https://www.instagram.com/aashish_9.05/" target={"_blank"} whileHover={{ y: -5 }} whileTap={{ scale: 1.5 }} className='w-6 mx-3'><InstagramIcon /></motion.a>
+                    <motion.a href="https://github.com/ashish-619" target={"_blank"} rel="noopener noreferrer" whileHover={{ y: -5 }} whileTap={{ scale: 1.5 }} className='w-6 mr-3'><GithubIcon /></motion.a>
+                    <motion.a href="https://www.linkedin.com/in/ashishvaidya2/" target={"_blank"} rel="noopener noreferrer" whileHover={{ y: -5 }} whileTap={{ scale: 1.5 }} className='w-6 mx-3'><LinkedInIcon /></motion.a>
+                    <motion.a href="https://x.com/AshishVaidya905" target={"_blank"} whileHover={{ y: -5 }} rel="noopener noreferrer" whileTap={{ scale: 1.5 }} className='w-6 mx-3'> <TwitterIcon /></motion.a>
+                    <motion.a href="https://www.instagram.com/aashish_9.05/" target={"_blank"} whileHover={{ y: -5 }} rel="noopener noreferrer" whileTap={{ scale: 1.5 }} className='w-6 mx-3'><InstagramIcon /></motion.a>
                 </nav>
             </div>
 
@@ -77,10 +77,10 @@ const NavBar = () => {
                         </nav>
 
                         <nav className='flex items-center justify-center flex-wrap mt-2'>
-                            <motion.a href="https://github.com/ashish-619" target={"_blank"} whileHover={{ y: -5 }} whileTap={{ scale: 1.5 }} className='w-6 mr-3 bg-light rounded-full sx:mx-1'><GithubIcon /></motion.a>
-                            <motion.a href="https://www.linkedin.com/in/ashishvaidya2/" target={"_blank"} whileHover={{ y: -5 }} whileTap={{ scale: 1.5 }} className='w-6 mx-3 sx:mx-1'><LinkedInIcon /></motion.a>
-                            <motion.a href="https://x.com/AshishVaidya905" target={"_blank"} whileHover={{ y: -5 }} whileTap={{ scale: 1.5 }} className='w-6 mx-3 sx:mx-1'> <TwitterIcon /></motion.a>
-                            <motion.a href="https://www.instagram.com/aashish_9.05/"target={"_blank"} whileHover={{ y: -5 }} whileTap={{ scale: 1.5 }} className='w-6 mx-3 sx:mx-1'><InstagramIcon /></motion.a>
+                            <motion.a href="https://github.com/ashish-619" target={"_blank"} rel="noopener noreferrer" whileHover={{ y: -5 }} whileTap={{ scale: 1.5 }} className='w-6 mr-3 bg-light rounded-full sx:mx-1'><GithubIcon /></motion.a>
+                            <motion.a href="https://www.linkedin.com/in/ashishvaidya2/" target={"_blank"} rel="noopener noreferrer" whileHover={{ y: -5 }} whileTap={{ scale: 1.5 }} className='w-6 mx-3 sx:mx-1'><LinkedInIcon /></motion.a>
+                            <motion.a href="https://x.com/AshishVaidya905" target={"_blank"} whileHover={{ y: -5 }} rel="noopener noreferrer" whileTap={{ scale: 1.5 }} className='w-6 mx-3 sx:mx-1'> <TwitterIcon /></motion.a>
+                            <motion.a href="https://www.instagram.com/aashish_9.05/"target={"_blank"} whileHover={{ y: -5 }} rel="noopener noreferrer" whileTap={{ scale: 1.5 }} className='w-6 mx-3 sx:mx-1'><InstagramIcon /></motion.a>
                         </nav>
                     </motion.div>
                     : null
