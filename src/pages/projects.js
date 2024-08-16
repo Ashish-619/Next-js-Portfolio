@@ -103,7 +103,7 @@ const projects = () => {
                                 type=" Featured Personal Project"
                             />
                         </div>
-                        <div className='col-span-6'>
+                        <div className='col-span-6 sm:col-span-12'>
                             <Project
                                 title="Dice Game"
                                 img={project9}
@@ -112,7 +112,7 @@ const projects = () => {
                                 type="Game Based Project"
                             />
                         </div>
-                        <div className='col-span-6'>
+                        <div className='col-span-6 sm:col-span-12'>
                             <Project
                                 title="Blog Card"
                                 img={project4}
@@ -121,7 +121,7 @@ const projects = () => {
                                 type="Design Based Mini Project"
                             />
                         </div>
-                        <div className='col-span-6'>
+                        <div className='col-span-6 sm:col-span-12'>
                             <Project
                                 title="Contact Us Form"
                                 img={project5}
@@ -130,7 +130,7 @@ const projects = () => {
                                 type="Design Based Mini Project"
                             />
                         </div>
-                        <div className='col-span-6'>
+                        <div className='col-span-6 sm:col-span-12'>
                             <Project
                                 title="Product Preview Card"
                                 img={project6}
@@ -139,7 +139,7 @@ const projects = () => {
                                 type="Design Based Mini Project"
                             />
                         </div>
-                        <div className='col-span-6'>
+                        <div className='col-span-6 sm:col-span-12'>
                             <Project
                                 title="Social Links Profile"
                                 img={project7}
@@ -148,7 +148,7 @@ const projects = () => {
                                 type="Design Based Mini Project"
                             />
                         </div>
-                        <div className='col-span-6'>
+                        <div className='col-span-6 sm:col-span-12'>
                             <Project
                                 title="Landing Page"
                                 img={project10}
@@ -157,7 +157,7 @@ const projects = () => {
                                 type="Design Based Mini Project"
                             />
                         </div>
-                        <div className='col-span-6'>
+                        <div className='col-span-6 sm:col-span-12'>
                             <Project
                                 title="QR Code"
                                 img={project8}
