@@ -29,6 +29,7 @@ export default function App({ Component, pageProps }) {
         </AnimatePresence>
         <Footer />
       </main>
+      <Analytics />
     </AudioProvider>
   );
 }
